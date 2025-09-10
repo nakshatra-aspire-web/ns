@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Nakshatra Aspire Vatva Co-operative Housing Service Society Ltd.</title>
   <style>
+    /* ========== Global Styles ========== */
     body {
       font-family: "Segoe UI", Arial, sans-serif;
       background-color: #f9f9f9;
@@ -13,6 +14,8 @@
       color: #333;
       scroll-behavior: smooth;
     }
+
+    /* ========== Header & Nav ========== */
     header {
       background-color: #E20B1A;
       color: white;
@@ -25,18 +28,29 @@
       z-index: 1000;
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     }
+
     nav {
       margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
     }
+
     nav a {
       color: white;
-      margin: 0 12px;
       text-decoration: none;
       font-size: 15px;
+      transition: all 0.3s ease;
     }
-    nav a:hover {
+
+    nav a:hover, nav a.active-link {
       text-decoration: underline;
+      font-weight: 600;
+      color: #FFD700; /* gold for active link */
     }
+
+    /* ========== Sections ========== */
     section {
       max-width: 900px;
       margin: 30px auto;
@@ -44,14 +58,24 @@
       background: white;
       border-radius: 12px;
       box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      scroll-margin-top: 90px; /* Adjust for sticky header */
+      scroll-margin-top: 100px; /* sticky header offset */
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
     }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     h2 {
       color: #E20B1A;
       border-left: 4px solid #E20B1A;
       padding-left: 10px;
       margin-bottom: 15px;
     }
+
     h3 {
       color: #E20B1A;
       margin-top: 20px;
@@ -60,10 +84,13 @@
       border-left: 3px solid #E20B1A;
       padding-left: 8px;
     }
+
     p {
       line-height: 1.6;
       margin: 15px 0;
     }
+
+    /* ========== Footer ========== */
     footer {
       text-align: center;
       padding: 25px;
@@ -72,12 +99,13 @@
       color: white;
       font-size: 14px;
     }
+
     footer a {
       color: #fff;
       text-decoration: underline;
     }
 
-    /* Floating Buttons */
+    /* ========== Floating Buttons ========== */
     .call-button, .whatsapp-button, .email-button {
       position: fixed;
       bottom: 20px;
@@ -90,50 +118,40 @@
       transition: all 0.3s ease;
       z-index: 2000;
     }
-    .call-button {
-      right: 20px;
-      background-color: #E20B1A;
-      color: white;
-    }
-    .call-button:hover {
-      background-color: #b00813;
-      transform: scale(1.05);
-    }
-    .whatsapp-button {
-      left: 20px;
-      background-color: #25D366;
-      color: white;
-    }
-    .whatsapp-button:hover {
-      background-color: #1ebe5d;
-      transform: scale(1.05);
-    }
-    .email-button {
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #0078d7;
-      color: white;
-    }
-    .email-button:hover {
-      background-color: #005ea6;
-      transform: translateX(-50%) scale(1.05);
-    }
 
-    /* Play Store Badge */
+    .call-button { right: 20px; background-color: #E20B1A; color: white; }
+    .call-button:hover { background-color: #b00813; transform: scale(1.05); }
+
+    .whatsapp-button { left: 20px; background-color: #25D366; color: white; }
+    .whatsapp-button:hover { background-color: #1ebe5d; transform: scale(1.05); }
+
+    .email-button { left: 50%; transform: translateX(-50%); background-color: #0078d7; color: white; }
+    .email-button:hover { background-color: #005ea6; transform: translateX(-50%) scale(1.05); }
+
+    /* ========== Play Store Badge ========== */
     .store-section {
       text-align: center;
       margin: 40px 0;
     }
+
     .store-section img {
       height: 60px;
       transition: transform 0.2s ease;
     }
-    .store-section img:hover {
-      transform: scale(1.05);
+
+    .store-section img:hover { transform: scale(1.05); }
+
+    /* ========== Responsive Design ========== */
+    @media (max-width: 768px) {
+      header { font-size: 18px; padding: 15px; }
+      nav a { font-size: 14px; margin: 6px; }
+      section { padding: 20px; margin: 20px; }
+      .store-section img { height: 50px; }
     }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
     The Nakshatra Aspire Vatva Co-operative Housing Service Society Ltd.
     <nav>
@@ -150,82 +168,42 @@
     <h2>About Us</h2>
     <p>
       The Nakshatra Aspire Vatva Co-operative Housing Service Society Ltd. is a Society Management solution designed 
-      for residents, committee members, and administrators.  
-      Our mission is to simplify maintenance payments, communication, and promote transparency within the community.
+      for residents, committee members, and administrators. Our mission is to simplify maintenance payments, communication, and promote transparency within the community.
     </p>
   </section>
 
   <!-- Contact Us -->
   <section id="contact">
     <h2>Contact Us</h2>
-    <p><strong>Society Name:</strong><br>
-       THE NAKSHATRA ASPIRE VATVA CO OPERATIVE HOUSING SERVICE SOCIETY LTD.</p>
-
-    <p><strong>Address:</strong><br>
-       OPP. PRATHAM SKY FLAT , NEAR POOJA BUNGALOW,<br>
-       NEAR BHAMARIYA KUVA CHAR RASTA, NEW NAROL,<br>
-       AHMEDABAD-382405</p>
-
-    <p><strong>Phone:</strong><br>
-      <a href="tel:+918780485752">+91 87804 85752</a>
-    </p>
-
-    <p><strong>Email:</strong><br>
-      <a href="mailto:applicationnakshatra@gmail.com">applicationnakshatra@gmail.com</a>
-    </p>
-
-    <p><strong>WhatsApp:</strong><br>
-      <a href="https://wa.me/918780485752?text=Hello%20Nakshatra%20Aspire%20Team" target="_blank">
-         Chat on WhatsApp
-      </a>
-    </p>
+    <p><strong>Society Name:</strong><br>THE NAKSHATRA ASPIRE VATVA CO OPERATIVE HOUSING SERVICE SOCIETY LTD.</p>
+    <p><strong>Address:</strong><br>OPP. PRATHAM SKY FLAT, NEAR POOJA BUNGALOW,<br>NEAR BHAMARIYA KUVA CHAR RASTA, NEW NAROL,<br>AHMEDABAD-382405</p>
+    <p><strong>Phone:</strong><br><a href="tel:+918780485752">+91 87804 85752</a></p>
+    <p><strong>Email:</strong><br><a href="mailto:applicationnakshatra@gmail.com">applicationnakshatra@gmail.com</a></p>
+    <p><strong>WhatsApp:</strong><br><a href="https://wa.me/918780485752?text=Hello%20Nakshatra%20Aspire%20Team" target="_blank">Chat on WhatsApp</a></p>
   </section>
 
   <!-- Privacy Policy -->
   <section id="privacy">
     <h2>Privacy Policy</h2>
-    <p>
-      Welcome to the Nakshatra Aspire Society Management App.  
-      This app is designed exclusively for society members to manage maintenance payments, view history, and access important information.  
-      We respect your privacy and are committed to protecting your personal information.
-    </p>
-
+    <p>Welcome to the Nakshatra Aspire Society Management App. This app is designed exclusively for society members to manage maintenance payments, view history, and access important information. We respect your privacy and are committed to protecting your personal information.</p>
     <h3>Information Collection & Usage</h3>
-    <p>
-      We only collect information necessary for society management purposes, such as member details, block/flat/shop information, and payment records.  
-      Your information will <strong>never be sold, shared, or misused</strong>.  
-      It is used strictly for reference within the society.
-    </p>
-
+    <p>We only collect information necessary for society management purposes, such as member details, block/flat/shop information, and payment records. Your information will <strong>never be sold, shared, or misused</strong>. It is used strictly for reference within the society.</p>
     <h3>Data Security</h3>
-    <p>
-      All data is stored securely and used solely for administrative and member-related communication.  
-      We implement measures to protect your information from unauthorized access.
-    </p>
-
+    <p>All data is stored securely and used solely for administrative and member-related communication. We implement measures to protect your information from unauthorized access.</p>
     <h3>Third-Party Services</h3>
-    <p>
-      The app may use trusted third-party services (like Firebase for authentication and secure payment processing).  
-      These services follow their own privacy policies in compliance with data protection laws.
-    </p>
+    <p>The app may use trusted third-party services (like Firebase for authentication and secure payment processing). These services follow their own privacy policies in compliance with data protection laws.</p>
   </section>
 
   <!-- Terms -->
   <section id="terms">
     <h2>Terms & Conditions</h2>
-    <p>
-      By using the Nakshatra Aspire app/website, you agree to comply with your society's rules and regulations.  
-      Payments and communications are strictly for official society purposes. Misuse of the platform may lead to restricted access.
-    </p>
+    <p>By using the Nakshatra Aspire app/website, you agree to comply with your society's rules and regulations. Payments and communications are strictly for official society purposes. Misuse of the platform may lead to restricted access.</p>
   </section>
 
   <!-- Refund -->
   <section id="refund">
     <h2>Cancellation & Refund Policy</h2>
-    <p>
-      All payments made through Nakshatra Aspire are final and non-refundable, except in the case of technical errors or duplicate transactions.  
-      For such issues, please contact our support team.
-    </p>
+    <p>All payments made through Nakshatra Aspire are final and non-refundable, except in the case of technical errors or duplicate transactions. For such issues, please contact our support team.</p>
   </section>
 
   <!-- Play Store -->
@@ -236,6 +214,7 @@
     <p>Download the Nakshatra Aspire App on Google Play</p>
   </div>
 
+  <!-- Footer -->
   <footer>
     © 2025 The Nakshatra Aspire Vatva Co-operative Housing Service Society Ltd. | All Rights Reserved
   </footer>
@@ -245,5 +224,24 @@
   <a href="https://wa.me/918780485752?text=Hello%20Nakshatra%20Aspire%20Team" target="_blank" class="whatsapp-button">💬 WhatsApp</a>
   <a href="mailto:applicationnakshatra@gmail.com" class="email-button">✉️ Email</a>
 
+  <!-- ========== Scroll Animations & Active Nav ========== -->
+  <script>
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          navLinks.forEach(link => link.classList.remove('active-link'));
+          const id = entry.target.getAttribute('id');
+          const activeLink = document.querySelector(`nav a[href="#${id}"]`);
+          if (activeLink) activeLink.classList.add('active-link');
+        }
+      });
+    }, { threshold: 0.5 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
 </body>
 </html>
